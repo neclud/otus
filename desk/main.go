@@ -1,12 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
 
 func main() {
 	var x, y, str, col int
-	y = 6 // количество столбцов
-	x = 6 // количество строк
-	y *= 2
+	//var sizeOfDesk []int
+	var sizeOfDesk [2]int
+	for i := 0; i < 2; i++ {
+		sizeOfDesk[i], _ = strconv.Atoi(os.Args[i+1])
+	}
+	//sizeOfDesk = os.Args
+	y = sizeOfDesk[0] // количество столбцов
+	x = sizeOfDesk[1] // количество строк
 	for str < x {
 		for col < y {
 			if col%2 == 0 {
